@@ -1,0 +1,75 @@
+<html>
+ <body>
+    <h1>Name : {{ name | upper }}</h1>
+    <h1>Name : {{ name | lower }}</h1>
+    <h2> Roll : {{ roll | floatformat:2 }}</h2>
+    <h3> Title : {{ title }}</h3>
+
+    <h2> value : {{ title | length }}</h2>
+    <h3>DateTime:{{ date | date:"Y-m-d" }}</h3>
+    <h3>Time:{{ date | date:"h:i:s A" }}</h3>
+    <h3>ADD:{{ number | add:"10" }}</h3>
+    <h3>Addslashes: {{ addslashes }}</h3>
+    <h3>Capfirst: {{ cap | capfirst }}</h3>
+    <h3>Center: {{ width | center:"35" }}</h3>
+    
+    <h3> Cut: {{ text | cut:" " }}</h3>
+    <h3> Date: {{ date | date:"D d M Y" }}</h3>
+    <h3> Empty : {{ Variable | default:"nothing" }}</h3>
+    <h3> Empty : {{ empty_var | default:"nothing" }}</h3>
+
+    <h3>Name</h2>
+    <ul>
+    {% for person in people|dictsort:"name" %}
+        <h3>{{ person.name }} ({{ person.age }} years old)</h3>
+    {% endfor %}
+    </ul>
+    
+    {% if ' value | divisibleby:"3"' %}
+        <h3>{{ value }} is divisible by 3.</h3>
+    {% else %}
+        <h3>{{ value }} is not divisible by 3.</h3>
+    {% endif %}
+
+    <h3> File size : {{ file_size | filesizeformat  }}</h3>
+    <h3> First : {{ first_value | first  }}</h3>
+    <h3> Join : {{ join_value | join:" += " }} </h3>
+    <h3> Last : {{ first_value | last  }}</h3>
+    <h3> length : {{ first_value | length  }}</h3>
+   
+    <h3> length : {{ line | linenumbers }}</h3>
+
+    <h3>String to list: {{ string_value | make_list }}</h3>
+    <h3>Integer to list: {{ integer_value | make_list }}</h3>
+
+    <h3> Random : {{ first_value | random  }}</h3>
+    <h3> Slice : {{ first_value | slice:":2"  }}</h3>
+    <h3> Slugify : {{ first_value | slugify   }}</h3>
+    <h3>Data: {{ date | time:"H:i" }}</h3>
+
+    <h3>Time date: {{ blog_date | timesince:comment_date }}</h3>
+    <h3>Original: {{ valuee }}</h3>
+    <h3>Titlecased: {{ valuee | title }}</h3>
+    <h3>{{ varr | unordered_list }}</h3>
+    <h3> WordCount : {{ title | wordcount }}</h3>
+
+    <h3>{{ value1 | date }}</h3>
+    <h3>{{ value2 | date:"SHORT_DATE_FORMAT" }}</h3>
+    <h3>{{ value2 | date:"D d M Y" }}</h3> 
+    <h3>{{ value11 | add:"5" }}</h3>
+    <h3>{{ value111 | cut:" " }}</h3>
+    <h3>{{ value222 | cut:"-" }}</h3>
+     
+    <h3>{{ value12 | truncatechars:6 }}</h3>
+    <h3>{{ value21 | truncatechars:5 }}</h3>
+    <h3>HTML1: {{ html1 | striptags }}</h3>
+    <h3>HTML2: {{ html2 | striptags }}</h3>
+
+    <h3>You have {{num_messages }} message{{num_messages | pluralize }}.</h3>
+    <h3>You have {{ num_tomato}} tomato{{num_tomato | pluralize:"es" }}.</h3>
+    <h3>You have {{num_cherries }} cherr{{ num_cherries | pluralize:"y,ies" }}.</h3>
+    <p>{{ long_text1| truncatewords:36 }}</p>
+    <p>{{ long_text2 | truncatewords:24 }}</p>
+    
+ </body>
+</html>
